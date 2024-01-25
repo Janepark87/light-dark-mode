@@ -35,8 +35,10 @@ function initializeTheme() {
 	const isDarkModePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
 	const isDark = localStorage.theme === 'dark' || (!('theme' in localStorage) && isDarkModePreferred);
 
-	if (isDark) toggleSwitch.checked = true;
-	switchTheme(isDark);
+	if (isDark) {
+		toggleSwitch.checked = true;
+		switchTheme(isDark);
+	}
 }
 
 initializeTheme();
